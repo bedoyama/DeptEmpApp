@@ -1,0 +1,105 @@
+<xs:schema xmlns:tns="http://service.company.antra.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://service.company.antra.net/" version="1.0">
+
+  <xs:element name="deleteAllDepartments" type="tns:deleteAllDepartments"/>
+
+  <xs:element name="deleteAllDepartmentsResponse" type="tns:deleteAllDepartmentsResponse"/>
+
+  <xs:element name="deleteDepartment" type="tns:deleteDepartment"/>
+
+  <xs:element name="deleteDepartmentResponse" type="tns:deleteDepartmentResponse"/>
+
+  <xs:element name="findDepartmentById" type="tns:findDepartmentById"/>
+
+  <xs:element name="findDepartmentByIdResponse" type="tns:findDepartmentByIdResponse"/>
+
+  <xs:element name="listAllDepartments" type="tns:listAllDepartments"/>
+
+  <xs:element name="listAllDepartmentsResponse" type="tns:listAllDepartmentsResponse"/>
+
+  <xs:element name="saveDepartment" type="tns:saveDepartment"/>
+
+  <xs:element name="saveDepartmentResponse" type="tns:saveDepartmentResponse"/>
+
+  <xs:element name="updateDepartment" type="tns:updateDepartment"/>
+
+  <xs:element name="updateDepartmentResponse" type="tns:updateDepartmentResponse"/>
+
+  <xs:complexType name="updateDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dept" type="tns:department"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="department">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="deptEmail" type="xs:string"/>
+      <xs:element minOccurs="0" name="deptId" type="xs:int"/>
+      <xs:element minOccurs="0" name="deptName" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="employees" nillable="true" type="tns:employee"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="employee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="age" type="xs:int"/>
+      <xs:element minOccurs="0" name="empId" type="xs:int"/>
+      <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateDepartmentResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findDepartmentById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findDepartmentByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:department"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dept" type="tns:department"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteDepartmentResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="listAllDepartments">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="listAllDepartmentsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:department"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAllDepartments">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAllDepartmentsResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="saveDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dept" type="tns:department"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="saveDepartmentResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+</xs:schema>

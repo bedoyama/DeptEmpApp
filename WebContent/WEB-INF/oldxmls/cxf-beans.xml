@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd  
+	http://www.springframework.org/schema/util 
+  	http://www.springframework.org/schema/util/spring-util-3.2.xsd  
+  	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+  	  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<jaxws:endpoint id="departmentservice"
+		implementor="net.antra.company.service.DepartmentServiceImpl"
+		wsdlLocation="wsdl/departmentserviceimpl.wsdl" address="/departmentservice">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+	<jaxws:endpoint id="employeeservice"
+		implementor="net.antra.company.service.EmployeeServiceImpl"
+		wsdlLocation="wsdl/employeeserviceimpl.wsdl" address="/employeeservice">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/homero" />
+		<property name="username" value="antra" />
+		<property name="password" value="antra" />
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Hibernate 4 SessionFactory Bean definition -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<value>net.antra.company.model</value>
+		</property>
+		<!-- <property name="annotatedClasses"> <list> <value>net.antra.company.model.Department</value> 
+			<value>net.antra.company.model.Employee</value> </list> </property> -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<context:component-scan base-package="net.antra.company" />
+
+</beans>

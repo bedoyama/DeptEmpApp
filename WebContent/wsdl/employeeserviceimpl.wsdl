@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="EmployeeServiceImplService" targetNamespace="http://service.company.antra.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.company.antra.net/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://service.company.antra.net/" schemaLocation="employeeserviceimpl_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="deleteEmployeeResponse">
+    <wsdl:part name="parameters" element="tns:deleteEmployeeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteAllEmployeesResponse">
+    <wsdl:part name="parameters" element="tns:deleteAllEmployeesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveEmployee">
+    <wsdl:part name="parameters" element="tns:saveEmployee">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveEmployeeResponse">
+    <wsdl:part name="parameters" element="tns:saveEmployeeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateEmployee">
+    <wsdl:part name="parameters" element="tns:updateEmployee">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAllEmployeesResponse">
+    <wsdl:part name="parameters" element="tns:listAllEmployeesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findEmployeeByIdResponse">
+    <wsdl:part name="parameters" element="tns:findEmployeeByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteAllEmployees">
+    <wsdl:part name="parameters" element="tns:deleteAllEmployees">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAllEmployees">
+    <wsdl:part name="parameters" element="tns:listAllEmployees">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findEmployeeById">
+    <wsdl:part name="parameters" element="tns:findEmployeeById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateEmployeeResponse">
+    <wsdl:part name="parameters" element="tns:updateEmployeeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteEmployee">
+    <wsdl:part name="parameters" element="tns:deleteEmployee">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="EmployeeService">
+    <wsdl:operation name="saveEmployee">
+      <wsdl:input name="saveEmployee" message="tns:saveEmployee">
+    </wsdl:input>
+      <wsdl:output name="saveEmployeeResponse" message="tns:saveEmployeeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployee">
+      <wsdl:input name="updateEmployee" message="tns:updateEmployee">
+    </wsdl:input>
+      <wsdl:output name="updateEmployeeResponse" message="tns:updateEmployeeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmployees">
+      <wsdl:input name="deleteAllEmployees" message="tns:deleteAllEmployees">
+    </wsdl:input>
+      <wsdl:output name="deleteAllEmployeesResponse" message="tns:deleteAllEmployeesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAllEmployees">
+      <wsdl:input name="listAllEmployees" message="tns:listAllEmployees">
+    </wsdl:input>
+      <wsdl:output name="listAllEmployeesResponse" message="tns:listAllEmployeesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findEmployeeById">
+      <wsdl:input name="findEmployeeById" message="tns:findEmployeeById">
+    </wsdl:input>
+      <wsdl:output name="findEmployeeByIdResponse" message="tns:findEmployeeByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmployee">
+      <wsdl:input name="deleteEmployee" message="tns:deleteEmployee">
+    </wsdl:input>
+      <wsdl:output name="deleteEmployeeResponse" message="tns:deleteEmployeeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmployeeServiceImplServiceSoapBinding" type="tns:EmployeeService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="saveEmployee">
+      <soap:operation soapAction="urn:SaveEmployee" style="document"/>
+      <wsdl:input name="saveEmployee">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="saveEmployeeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployee">
+      <soap:operation soapAction="urn:UpdateEmployee" style="document"/>
+      <wsdl:input name="updateEmployee">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateEmployeeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEmployees">
+      <soap:operation soapAction="urn:DeleteAllEmployees" style="document"/>
+      <wsdl:input name="deleteAllEmployees">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteAllEmployeesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAllEmployees">
+      <soap:operation soapAction="urn:ListAllEmployees" style="document"/>
+      <wsdl:input name="listAllEmployees">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listAllEmployeesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findEmployeeById">
+      <soap:operation soapAction="urn:FindEmployeeById" style="document"/>
+      <wsdl:input name="findEmployeeById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findEmployeeByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmployee">
+      <soap:operation soapAction="urn:DeleteEmployee" style="document"/>
+      <wsdl:input name="deleteEmployee">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteEmployeeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmployeeServiceImplService">
+    <wsdl:port name="EmployeeServiceImplPort" binding="tns:EmployeeServiceImplServiceSoapBinding">
+      <soap:address location="http://localhost:8090/RestfulCompany/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DepartmentServiceImplService" targetNamespace="http://service.company.antra.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.company.antra.net/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://service.company.antra.net/" schemaLocation="departmentserviceimpl_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="deleteAllDepartmentsResponse">
+    <wsdl:part name="parameters" element="tns:deleteAllDepartmentsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateDepartment">
+    <wsdl:part name="parameters" element="tns:updateDepartment">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDepartmentById">
+    <wsdl:part name="parameters" element="tns:findDepartmentById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveDepartmentResponse">
+    <wsdl:part name="parameters" element="tns:saveDepartmentResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteDepartmentResponse">
+    <wsdl:part name="parameters" element="tns:deleteDepartmentResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAllDepartmentsResponse">
+    <wsdl:part name="parameters" element="tns:listAllDepartmentsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteDepartment">
+    <wsdl:part name="parameters" element="tns:deleteDepartment">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDepartmentByIdResponse">
+    <wsdl:part name="parameters" element="tns:findDepartmentByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateDepartmentResponse">
+    <wsdl:part name="parameters" element="tns:updateDepartmentResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listAllDepartments">
+    <wsdl:part name="parameters" element="tns:listAllDepartments">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteAllDepartments">
+    <wsdl:part name="parameters" element="tns:deleteAllDepartments">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveDepartment">
+    <wsdl:part name="parameters" element="tns:saveDepartment">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DepartmentService">
+    <wsdl:operation name="updateDepartment">
+      <wsdl:input name="updateDepartment" message="tns:updateDepartment">
+    </wsdl:input>
+      <wsdl:output name="updateDepartmentResponse" message="tns:updateDepartmentResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDepartmentById">
+      <wsdl:input name="findDepartmentById" message="tns:findDepartmentById">
+    </wsdl:input>
+      <wsdl:output name="findDepartmentByIdResponse" message="tns:findDepartmentByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDepartment">
+      <wsdl:input name="deleteDepartment" message="tns:deleteDepartment">
+    </wsdl:input>
+      <wsdl:output name="deleteDepartmentResponse" message="tns:deleteDepartmentResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAllDepartments">
+      <wsdl:input name="listAllDepartments" message="tns:listAllDepartments">
+    </wsdl:input>
+      <wsdl:output name="listAllDepartmentsResponse" message="tns:listAllDepartmentsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllDepartments">
+      <wsdl:input name="deleteAllDepartments" message="tns:deleteAllDepartments">
+    </wsdl:input>
+      <wsdl:output name="deleteAllDepartmentsResponse" message="tns:deleteAllDepartmentsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveDepartment">
+      <wsdl:input name="saveDepartment" message="tns:saveDepartment">
+    </wsdl:input>
+      <wsdl:output name="saveDepartmentResponse" message="tns:saveDepartmentResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DepartmentServiceImplServiceSoapBinding" type="tns:DepartmentService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateDepartment">
+      <soap:operation soapAction="urn:UpdateDepartment" style="document"/>
+      <wsdl:input name="updateDepartment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateDepartmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDepartmentById">
+      <soap:operation soapAction="urn:FindDepartmentById" style="document"/>
+      <wsdl:input name="findDepartmentById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findDepartmentByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDepartment">
+      <soap:operation soapAction="urn:DeleteDepartment" style="document"/>
+      <wsdl:input name="deleteDepartment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteDepartmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAllDepartments">
+      <soap:operation soapAction="urn:ListAllDepartments" style="document"/>
+      <wsdl:input name="listAllDepartments">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listAllDepartmentsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllDepartments">
+      <soap:operation soapAction="urn:DeleteAllDepartments" style="document"/>
+      <wsdl:input name="deleteAllDepartments">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteAllDepartmentsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveDepartment">
+      <soap:operation soapAction="urn:SaveDepartment" style="document"/>
+      <wsdl:input name="saveDepartment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="saveDepartmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DepartmentServiceImplService">
+    <wsdl:port name="DepartmentServiceImplPort" binding="tns:DepartmentServiceImplServiceSoapBinding">
+      <soap:address location="http://localhost:8090/RestfulCompany/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
